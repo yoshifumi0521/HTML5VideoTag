@@ -9,6 +9,88 @@
 
 
 
+<!--videoタグをここにいれる,mp4ファイル-->
+<div><video id="video" src="video/automatic.mp4"></div>
+
+<input type="button" value="start" onclick="play()">
+<input type="button" value="stop" onclick="pause()">
+<input type="button" value="speedup" onclick="speedup()">
+<input type="button" value="speeddown" onclick="speeddown()">
+
+<script>
+
+//関数オブジェクトVideoをつくる。複数のvideoオブジェクトをつくることを想定。
+Video = function()
+{
+	//ここにオブジェクトごとに、独立させたい、プロパティーやメソッドを書く。
+	
+	
+	
+}
+//プロパティーをつくる。
+Video.prototype.videoobject = document.getElementById("video");
+
+//関数オブジェクトVideoのplayメソッドを定義する。
+Video.prototype.play = function()
+{
+	this.videoobject.play();
+}
+
+//関数オブジェクトVideoのpauseメソッドを定義する。
+Video.prototype.pause = function()
+{
+	this.videoobject.pause();
+}
+
+//スピードを上げるメソッドを定義する。
+Video.prototype.speedup = function()
+{
+	this.videoobject.playbackRate= this.videoobject.playbackRate + 0.1;
+}
+
+//スピードを下げるメソッドを定義する。
+Video.prototype.speeddown = function()
+{
+	this.videoobject.playbackRate= this.videoobject.playbackRate - 0.1;
+}
+
+//ここで、videoオブジェクトを作成する。
+var video = new Video;
+
+
+//playボタンを押したときにする処理。
+function play()
+{
+	video.play();
+}
+
+//stopボタンを押したときにする処理。
+function pause()
+{
+	video.pause();
+}
+
+//speedupボタンを押したき
+function speedup()
+{
+	video.speedup();
+}
+
+//speeddownボタンを押したき
+function speeddown()
+{
+	video.speeddown();
+}
+
+
+
+
+
+
+
+</script>
+
+
 
 
 
